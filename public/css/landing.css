@@ -1,8 +1,6 @@
 #navbar{
     width:100vw;
-    border-bottom: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: #4ec0e9;
+    border-bottom: 2px solid #4ec0e9;
     background-color: rgba(255, 255, 255, 0.15);
     height: 70px;
     z-index: 999;
@@ -13,7 +11,7 @@
     
 }
 .nav-item{
-    border-left: 2px solid #4ec0e9;
+    /* border-left: 2px solid #4ec0e9; */
     float: left;
     display: block;
     padding-left: 20px;
@@ -40,3 +38,10 @@
     opacity: 0.8;
 }
 
+.pfp{
+    border-radius: 50%;
+}
+.menu{
+    position: relative;
+    display: inline-block;
+}

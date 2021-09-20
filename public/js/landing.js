@@ -11,6 +11,11 @@ window.onload = (event) => {
       welcoming.id="title";
       welcoming.innerText="Welcome, "+user.displayName;
       container.appendChild(welcoming);
+        const dropdown = document.querySelector('.dropbtn');
+        const pfp=document.createElement("img");
+        pfp.className="pfp";
+        pfp.src=user.photoURL;
+        dropdown.appendChild(pfp);
     } else {
       window.location = 'index.html'; // If not logged in, navigate back to login page.
     }

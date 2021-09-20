@@ -16,7 +16,7 @@
    <script defer src="/__/firebase/8.3.1/firebase-auth.js"></script>
    <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-   <script defer src="js/index.js"></script>
+   <script defer src="js/register.js"></script>
     <title>Get Started</title>
 </head>
 <body>
@@ -73,8 +73,16 @@
         <div class="star"></div>
       </div>
       <div class="container has-text-centered">
-        <h1 id="title">Leave Your Memory Here &#60;3 </h1>
-        <button class="button is-info is-outlined is-large" onclick="signIn()">Start</button>
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input class="input" type="text"  id="name-input" placeholder="Text input">
+            </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" onclick="submitName()">Submit</button>
+            </div>
+          </div>
       </div>
 
 </body>

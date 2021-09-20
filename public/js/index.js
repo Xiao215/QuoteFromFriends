@@ -1,3 +1,4 @@
+
 const signIn = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     // console.log(provider)
@@ -10,7 +11,10 @@ const signIn = () => {
   
       // The signed-in user info.
       var user = result.user;
-      window.location = 'landing.html';
+     checkIfRegistered(user.uid);
+      //checkTwo(user.uid);
+
+      window.location = 'register.html';
     }).catch((error) => {
       // Handle Errors here.
       var errorCode = error.code;
@@ -28,3 +32,21 @@ const signIn = () => {
       console.log(err);
     });
   }
+
+  const checkIfRegistered = (userId) => {
+    console.log("BEGIN");
+    const userRef = firebase.database().ref(`users/${userId}`);
+    console.log("UserID: "+userId);
+    console.log("UserRef: "+userRef);
+    //way 1
+    userRef.on('value', (snapshot) => {
+        console.log("userRef function Begins");
+        const data = snapshot.val();
+        for(const noteItem in data) {
+          const note = data[noteItem];
+          console.log(note);
+        };
+      })
+    console.log("END");
+    console.log("aaabaa");
+  };
